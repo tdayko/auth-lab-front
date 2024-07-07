@@ -1,0 +1,13 @@
+<div class="w-full text-base text-slate-500 text-start">
+    <label [for]="inputName"> {{ label }} </label>
+    <div class="w-full rounded-lg flex">
+        <input 
+            class="rounded-l-lg bg-slate-200 py-3 pl-5 w-full" 
+            [type]="type" [value]="value" (input)="onInput($event)"
+        />
+        
+        <div class="bg-purple-600 p-3 rounded-r-lg">
+            <ng-content class="max-h-5"/>
+        </div>
+    </div>
+</div>
