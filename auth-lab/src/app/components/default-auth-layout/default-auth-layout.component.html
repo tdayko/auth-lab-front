@@ -1,21 +1,34 @@
-<main>
-    <section>
-        <img src="/assets/svg/logo.svg">
+<main class="flex flex-row justify-center items-center h-full">
 
-        <h2></h2>
-        <button>
+    <section class="h-full flex flex-col items-center justify-center p-9" style="flex-grow: 0.3;">
+        <img src="/assets/svg/logo.svg" class="mb-12">
+        <h2 class="text-xl bold font-bold mb-11">{{ title }}</h2>
 
-        </button>
-        <div>
-            <span>or</span>
+        <ng-content></ng-content>
+
+        <div class="w-full flex flex-col items-center justify-center gap-7">
+            <button
+                class="w-full bg-purple-600 border border-radius rounded-lg text-slate-50 font-semibold px-6 py-3 text-center shadow-md cursor-pointer">
+                {{ primaryBtnText }}
+            </button>
+
+            <div class="flex items-center justify-center gap-5 uppercase w-full">
+                <div class=" bg-slate-400 grow" style="height: 1px;"></div>
+                <span class="text-xs text-slate-400">OR</span>
+                <div class=" bg-slate-400 grow" style="height: 1px;"></div>
+            </div>
+ 
+            <button
+                class="w-full border border-radius rounded-lg bg-slate-50 border-purple-600 px-6 py-3 text-center shadow-md cursor-pointer">
+                {{ secondaryBtnText }}
+            </button>
         </div>
-        <button>
 
-        </button>
     </section>
 
-    <section>
+    <section class="flex flex-col items-center justify-center gap-2 grow h-full bg-slate-200 font-semibold">
         <h1>You should MoveIt!</h1>
-        <img src="/assets/svg/main-illustrator.svg"/>
+        <img src="/assets/svg/main-illustrator.svg" />
     </section>
+
 </main>

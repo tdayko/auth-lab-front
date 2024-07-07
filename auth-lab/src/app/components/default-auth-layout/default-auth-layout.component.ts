@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-default-auth-layout',
@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './default-auth-layout.component.html',
 })
 export class DefaultAuthLayoutComponent {
-
+  @Input() title: string = "";
+  @Input() primaryBtnText: string = "";
+  @Input() secondaryBtnText: string = "";
 }
