@@ -17,10 +17,10 @@ export class LoginComponent {
   loginForm: FormGroup;
 
   constructor(
-      private router: Router, 
-      private loginService: LoginService,
-      private toastrService: ToastrService
-    ) {
+    private router: Router,
+    private loginService: LoginService,
+    private toastrService: ToastrService
+  ) {
     this.loginForm = new FormGroup(
       {
         email: new FormControl('', [Validators.required, Validators.email]),
@@ -32,7 +32,7 @@ export class LoginComponent {
   submit() {
     this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
       next: () => this.toastrService.success("Login successfully."),
-      error: (error) => this.toastrService.error("An error occured during login.")
+      error: () => this.toastrService.error("An error occured during login.")
     });
   }
 
