@@ -1,0 +1,20 @@
+<app-default-auth-layout title="Signin and start today!" primaryBtnText="Sign Now" secondaryBtnText="Login Now"
+    (submit)="submit()" (navigate)="navigate()" [disablePrimaryBtn]="!signupForm.valid">
+    <form [formGroup]="signupForm" class="w-full flex flex-col gap-3 mb-9">
+        <app-primary-input inputName="name" type="text" label="Name" formControlName="name">
+            <img src="/assets/svg/name-icon.svg">
+        </app-primary-input>
+
+        <app-primary-input inputName="email" type="email" label="Email" formControlName="email">
+            <img src="/assets/svg/email-icon.svg">
+        </app-primary-input>
+
+        <app-primary-input inputName="password" type="password" label="Password" formControlName="password">
+            <img src="/assets/svg/password-icon.svg">
+        </app-primary-input>
+
+        <app-primary-input inputName="confirmPassword" type="password" label="Confirm Password" formControlName="confirmPassword">
+            <img src="/assets/svg/password-icon.svg">
+        </app-primary-input>
+    </form>
+</app-default-auth-layout>
