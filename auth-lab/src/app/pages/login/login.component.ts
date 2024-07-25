@@ -21,6 +21,11 @@ export class LoginComponent {
     private loginService: LoginService,
     private toastrService: ToastrService
   ) {
+
+    if (sessionStorage.getItem("token") != null) {
+      this.toastrService.success("Register successfully.");
+    }
+    
     this.loginForm = new FormGroup(
       {
         email: new FormControl('', [Validators.required, Validators.email]),
