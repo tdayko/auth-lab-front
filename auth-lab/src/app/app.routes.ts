@@ -8,6 +8,10 @@ export const routes: Routes = [
         component: LoginComponent
     },
     {
+        path: "",
+        component: LoginComponent
+    },
+    {
         path: "signup",
         component: SignupComponent
     }

@@ -1,3 +1,5 @@
+import { LoginRequest } from './../types/login-request.type';
+import { SignupRequest } from '../types/signup-request.type';
 import { AuthResponse } from './../types/auth-response.type';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -10,7 +12,8 @@ export class LoginService {
   constructor(private httpClient: HttpClient) { }
 
   login(email: string, password: string) {
-    return this.httpClient.post<AuthResponse>(this.apiUrl + "/login", { email, password }).pipe(
+    let loginRequest: LoginRequest = { email, password };
+    return this.httpClient.post<AuthResponse>(this.apiUrl + "/login", loginRequest).pipe(
       tap((value) => {
         sessionStorage.setItem("token", value.token);
       })
@@ -18,7 +21,8 @@ export class LoginService {
   }
 
   signup(name: string, email: string, password: string) {
-    return this.httpClient.post<AuthResponse>(this.apiUrl + "/register", { username: name, email, password }).pipe(
+    let signupRequest: SignupRequest = { username: name, email, password };
+    return this.httpClient.post<AuthResponse>(this.apiUrl + "/register", signupRequest).pipe(
       tap((value) => {
         sessionStorage.setItem("auth-token", value.token);
       })
